@@ -1,4 +1,4 @@
-package com.example.bit;
+package com.example.Model;
 
 
 import jakarta.persistence.Column;
@@ -26,6 +26,9 @@ public class Student {
     private String department;
 
    
+
+    public Student() {
+    }
 
     public Student(String name, String roll, String age, String department) {
         this.name = name;
@@ -72,5 +75,11 @@ public class Student {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    @Override
+    public String toString() {
+        return "Student [id=" + id + ", name=" + name + ", roll=" + roll + ", age=" + age + ", department=" + department
+                + "]";
     }
 }
