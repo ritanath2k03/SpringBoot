@@ -15,13 +15,27 @@ public class StudentServiceImpl implements StudentService{
 
     @Override
     public Student create(Student st) {
-        return repo.save(st);
+        Student createdStudent=repo.save(st);
+        return createdStudent;
     }
     @Override
     public Student fetchStudentById(int id){
         return repo.findById(id).orElse(null);
     }
-    
+    @Override
+    public Student updateStudent(Student student){
+        Student updatest=repo.findById(student.getId()).orElse(null);
+        if(updatest!=null){
+            updatest.setId(student.getId());
+            updatest.setName(student.getName());
+            
+            repo.save(updatest);
+            System.out.println("Updated");
+            return updatest;
+        }
+        return null;
+    }
+  
 
     
 }

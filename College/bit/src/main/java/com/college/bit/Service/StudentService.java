@@ -10,4 +10,5 @@ public interface StudentService {
         Student create(Student st);
 
         Student fetchStudentById(int id);
+        Student updateStudent(Student st);
 }
