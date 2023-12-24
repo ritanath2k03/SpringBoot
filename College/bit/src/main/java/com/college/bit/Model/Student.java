@@ -1,4 +1,4 @@
-package com.college.bit;
+package com.college.bit.Model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,9 +10,18 @@ import jakarta.persistence.Table;
 public class Student {
     @Id
     @Column
-    private int id;
+
+    private Integer id;
     @Column
     private String name;
+
+    
+    public Student() {
+    }
+    public Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
     @Override
     public String toString() {
         return "Student [id=" + id + ", name=" + name + "]";
