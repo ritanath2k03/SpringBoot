@@ -8,4 +8,6 @@ import com.college.bit.Model.Student;
 public interface StudentService {
   
         Student create(Student st);
+
+        Student fetchStudentById(int id);
 }
