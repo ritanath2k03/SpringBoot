@@ -9,17 +9,17 @@ import org.springframework.context.annotation.Configuration;
 import com.springsql.Model.Student;
 
 @SpringBootApplication
-@Configuration
+// @Configuration
 public class CrudsqlApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CrudsqlApplication.class, args);
 	}
 	
-	@Bean
-	public Student student(){
-		return new Student();
-	}
+	// @Bean
+	// public Student student(){
+	// 	return new Student();
+	// }
 
 
 

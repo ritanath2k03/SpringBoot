@@ -21,11 +21,6 @@ public class StudentServiceImp implements StudentService{
         repo.add(student);
     }
 
-    @Override
     
-    public com.springsql.crudsql.Controller.Student addStudent(com.springsql.crudsql.Controller.Student student) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addStudent'");
-    }
     
 }

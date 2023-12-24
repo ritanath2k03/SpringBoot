@@ -1,15 +1,29 @@
 package com.springsql.Model;
 
-import org.springframework.stereotype.Repository;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
 
+@Entity
 
+@Table(name="students")
 public class Student {
     
+    @Id
     private int id;
 
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "age")
     private int age;
+
+    @Column(name = "roll")
     private long roll;
+
+    @Column(name = "dept")
     private String dept;
 
     public Student() {
