@@ -6,7 +6,8 @@ import java.sql.Date;
 
 public class User {
 
-    private String name;
+    private String fullname;
+  
     private String email;
     private String gender;
     private String password;
@@ -23,11 +24,12 @@ public class User {
     public User() {
         
     }
-    public String getName() {
-        return name;
+    
+    public String getFullname() {
+        return fullname;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
     public String getEmail() {
         return email;

@@ -1,0 +1,19 @@
+Authentication is like giving access to a particular user
+GrantedAuthority is an interface with only one method:
+
+String getAuthority();
+
+ As soon as a user authenticates, she can access every part of an application.
+
+But most applications have the concept of permissions.
+
+http
+          .authorizeRequests()
+            .antMatchers("/admin").hasAuthority("ROLE_ADMIN") // (1)
+            .antMatchers("/callcenter").hasAnyAuthority("ROLE_ADMIN", "ROLE_CALLCENTER") // (2)
+            .anyRequest().authenticated() // (3)
+            .and()
+         .formLogin()
+           .and()
+         .httpBasic();
+	}

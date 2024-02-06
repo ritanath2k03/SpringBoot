@@ -26,9 +26,10 @@ public class Regcontroller {
         model.addAttribute("professionList", professionList);
         return "regform";
     }
-    @PostMapping("/register")
+    @PostMapping("/registersubmit")
     public String submitForm(@ModelAttribute("user")User user){
        System.out.println(user);
+       if(user.getBirthday()!=null)System.out.println(user.getBirthday());
         return "successpage";
     }
 }

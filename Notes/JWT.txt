@@ -1,0 +1,6 @@
+-> JWT gives the flexibility of change the endpoints.
+-> We can implement it through POST or HTTP header.
+-> After generating the Token by server that is sent to the browser, after that browser sent the request to verify to server.
+-> It has a interface(Token generator) which need to be implemented into service calss.
+-> We need to implement bean explicity here.
+-> A filter is responsible to verify the tokens, It overrides doFilter method.

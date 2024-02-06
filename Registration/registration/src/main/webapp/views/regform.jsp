@@ -34,9 +34,9 @@
 <body>
     <div align="center">
         <h2>User Registration</h2>
-        <form:form action="/register" method="post" modelAttribute="user">
-            <form:label path="name">Full name:</form:label>
-            <form:input path="name"/><br/>
+        <form:form action="/registersubmit"  modelAttribute="user">
+            <form:label path="fullname">Full name:</form:label>
+            <form:input path="fullname"/><br/>
              
             <form:label path="email">E-mail:</form:label>
             <form:input path="email"/><br/>
@@ -61,6 +61,7 @@
             <form:textarea path="note" cols="25" rows="5"/><br/>
                  
             <form:button>Register</form:button>
+            <form:button>Clear</form:button>
         </form:form>
     </div>
 </body>

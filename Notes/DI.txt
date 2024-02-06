@@ -1,0 +1,13 @@
+Defination: Dependency injection is a design pattern in which a class receives its dependencies from an external source rather than creating them itself, promoting modularity, flexibility, and easier testing.
+
+DI is used to implement auto configuration in spring framework.
+When ever we declare the class as @component spring framework can create the object of that class dynamically.
+When we declare a variable as @Autowired, spring can connect that variable as required component dynamically / automatically.
+	-> it helps to the testing purpous and helps to implement loose cupling.
+	-> In spring boot DI can be two types i)Constructor ii)setter.
+
+Automatic thing 
+-> By using @Autowired the beans are being created automatically.
+
+
+						

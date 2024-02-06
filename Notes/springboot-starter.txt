@@ -1,0 +1,22 @@
+Before Spring Boot was introduced, 
+Spring Developers used to spend a lot of time on Dependency management. 
+Spring Boot Starters were introduced to solve this problem so that the developers can spend more time on actual code than Dependencies. 
+Spring Boot Starters are dependency descriptors that can be added under the <dependencies> section in pom.xml. 
+
+Total = 30+ dependencies
+Advantages :
+1.Increase productivity by decreasing the Configuration time for developers.
+2.Managing the POM is easier since the number of dependencies to be added is decreased.
+3.Tested, Production-ready, and supported dependency configurations.
+4.No need to remember the name and version of the dependencies.
+
+Naming Conventions : spring-boot-starter-*name*
+
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+</dependencies>
+
+REST : spring-boot-starter-web

@@ -1,0 +1,7 @@
+AOP
+-> It refers to the Aspect Oriented Programming which Includes OOP.
+->To implement this we need to add seperate jar files.
+->It gives the flexibility to programmer not to write same code utils code multiple times.
+-> It has 3 Annotation to implement, i)Aspect, ii)Component iii)EnableAspectAutoProxy
+->It has Advice = what (Before/After), PointCut = where.
+-> Cross cutting requirments (Logging, Security, Transaction Managements).

@@ -1,0 +1,29 @@
+Spring Boot auto-configuration automatically configures the Spring application based on the jar dependencies that we have added.
+@SpringBootApplication=@ComponentScan+@EnableAutoConfiguration+@Configuration
+
+When we add the spring-boot-starter-web dependency in the project, Spring Boot auto-configuration looks for the Spring MVC is on the classpath. It auto-configures dispatcherServlet, a default error page, and web jars.
+
+Similarly, when we add the spring-boot-starter-data-jpa dependency, we see that Spring Boot Auto-configuration, auto-configures a datasource and an Entity Manager.
+
+1.@Conditional annotation acts as a base for the Spring Boot auto-configuration annotation extensions.
+2.It automatically registers the beans with @Component, @Configuration, @Bean, and meta-annotations for building custom stereotype annotations, etc.
+3.The annotation @EnableAutoConfiguration is used to enable the auto-configuration feature.
+4.The @EnableAutoConfiguration annotation enables the auto-configuration of Spring ApplicationContext by scanning the classpath components and registering the beans.
+5.This annotation is wrapped inside the @SpringBootApplication annotation along with @ComponentScan and @SpringBootConfiguration annotations.
+6.When running main() method, this annotation initiates auto-configuration.
+
+A: Dependencies
+
+Auto-Configuration is the main focus of the Spring Boot development.
+Our Spring application needs a respective set of dependencies to work.
+Spring Boot auto-configures a pre-set of the required dependencies without a need to configure them manually.
+This greatly helps and can be seen when we want to create a stand-alone application.
+When we build our application, Spring Boot looks after our dependencies and configures both the underlying Spring Framework and required jar dependencies (third-party libraries ) on the classpath according to our project built.
+It helps us to avoid errors like mismatches or incompatible versions of different libraries.
+If you want to override these defaults, you can override them after initialization.
+
+<parent>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-parent</artifactId>
+<version>...</version>
+</parent>

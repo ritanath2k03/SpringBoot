@@ -1,0 +1,6 @@
+-> Acuators is a production ready features which provide to programmer to monitor and manage application.
+-> It provides endpoints each of which denotes each features.
+-> Actuator endpoints can be secured, rate-limited and customized with various options and properties.
+->	management.security.enabled=false
+	management.endpoint.metrics.enabled=true
+	management.endpoints.web.exposure.include=*

@@ -1,0 +1,3 @@
+-> It is a powerful feature that allows to run a web server directly without deploying to a standalone server.
+-> It work if and only if atleast java is installed into the server.(Dont need WAR and EAR files and other config into the server explicitly).
+-> Example are like Tomcat, Jetty.

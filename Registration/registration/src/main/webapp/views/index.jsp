@@ -4,7 +4,7 @@
 <meta charset="ISO-8859-1">
 <title>Spring Boot Form Handling Example</title>
 </head>
-<body>
+<body align="center">
     <h1>Spring Boot Form Handling Example</h1>
     <h2>Spring Form Tags with JSP</h2>
     <a href="/register">Click here</a>

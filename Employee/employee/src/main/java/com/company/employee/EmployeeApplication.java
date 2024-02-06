@@ -1,15 +1,13 @@
-package com.reg.registration;
+package com.company.employee;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 @SpringBootApplication
-public class RegistrationApplication {
-  
+public class EmployeeApplication {
+
 	public static void main(String[] args) {
-		
-		SpringApplication.run(RegistrationApplication.class, args);
+		SpringApplication.run(EmployeeApplication.class, args);
 	}
 
 }
