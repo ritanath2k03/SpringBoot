@@ -1,8 +1,5 @@
 package com.bankingstuff.bankapp.model;
 
-
-
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,9 +13,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
-
 @Entity
 @Table
 @Data
@@ -28,15 +22,13 @@ import lombok.NoArgsConstructor;
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="account_Id")
+    @Column(name = "Id")
     private Long id;
-    @Column(name="holderName")
+    @Column(name = "type")
     private String name;
-    @Column(name="rem_balance")
-    private  double balance ;
-    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
+    @Column(name = "balance")
+    private double balance;
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private UserDetails userDetails;
 
-   
 }
-
