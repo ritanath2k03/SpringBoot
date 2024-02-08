@@ -1,5 +1,7 @@
 package com.bankingstuff.bankapp.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.bankingstuff.bankapp.model.Account;
@@ -13,4 +15,6 @@ public interface MyAccountService {
     void deleteAccount(Long id);
 
     Account deposite(Long id, Double amount);
+
+    List<Account> getAll();
 }

@@ -1,9 +1,11 @@
 package com.bankingstuff.bankapp.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.bankingstuff.bankapp.model.UserDetails;
 
-public interface UserDetailsRepo extends JpaRepository<UserDetails,Long>{
-    
+@Repository
+public interface UserDetailsRepo extends JpaRepository<UserDetails, Long> {
+
 }

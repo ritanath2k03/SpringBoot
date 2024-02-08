@@ -1,5 +1,6 @@
 package com.bankingstuff.bankapp.model;
 
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,8 +25,11 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
     private Long id;
+
     @Column(name = "type")
+    @Nonnull
     private String name;
+
     @Column(name = "balance")
     private double balance;
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)

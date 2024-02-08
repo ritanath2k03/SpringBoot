@@ -1,5 +1,7 @@
 package com.bankingstuff.bankapp.implementation;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,6 +45,12 @@ public class ServiceImpl implements MyAccountService {
         System.out.println("balance in impl" + balance);
         account.setBalance(balance + amount);
         return repo.save(account);
+    }
+
+    @Override
+    public List<Account> getAll() {
+        // TODO Auto-generated method stub
+        return repo.findAll();
     }
 
 }

@@ -1,5 +1,6 @@
 package com.bankingstuff.bankapp.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,11 @@ public class AccountController {
     @GetMapping("/fetch/{id}")
     public Account fetch(@PathVariable Long id) {
         return service.getAccount(id);
+    }
+
+    @GetMapping("/fetchAll")
+    public List<Account> fetchAll() {
+        return service.getAll();
     }
 
     @DeleteMapping("/account/{id}")

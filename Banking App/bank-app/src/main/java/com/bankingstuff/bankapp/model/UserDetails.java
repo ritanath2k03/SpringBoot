@@ -1,6 +1,5 @@
 package com.bankingstuff.bankapp.model;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,14 +19,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDetails {
-    
-@Id
-@Column(name = "USERINFO_ID", nullable=false)
-@GeneratedValue(strategy=GenerationType.AUTO)
-private Long userInfoId;
 
-private String address;
-private String phoneNumber;
-
+    @Id
+    @Column(name = "USERINFO_ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userInfoId;
+    private String name;
+    private String address;
+    private String phoneNumber;
 
 }
