@@ -27,7 +27,7 @@ public class BorrowingController {
 
         private final BorrowingServiceInterface borrowingServiceInterface;
 
-        @Operation(summary = "Borrow Book", description = "Borrow Book for Patron")
+        @Operation(summary = "Borrow Book", description = "Borrow Book for Student")
         @ApiResponses(value = {
                         @ApiResponse(responseCode = "200", description = "Borrow Added Successfully", content = {
                                         @Content(mediaType = "application/json", schema = @Schema(implementation = BorrowingDto.class))
@@ -35,7 +35,7 @@ public class BorrowingController {
                         @ApiResponse(responseCode = "400", description = "Validation Error", content = {
                                         @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorValidationResponse.class))
                         }),
-                        @ApiResponse(responseCode = "404", description = "Book Id Or Patron Id Not Found")
+                        @ApiResponse(responseCode = "404", description = "Book Id Or Student Id Not Found")
         })
 
         @PostMapping("/borrow/{bookId}/appUser/{appUserId}")
@@ -50,13 +50,13 @@ public class BorrowingController {
                                 .body(responseBody);
         }
 
-        @Operation(summary = "Return Book", description = "Return Book from Patron")
+        @Operation(summary = "Return Book", description = "Return Book from Student")
         @ApiResponses(value = {
                         @ApiResponse(responseCode = "200", description = "Book Returned Successfully"),
                         @ApiResponse(responseCode = "400", description = "Validation Error", content = {
                                         @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorValidationResponse.class))
                         }),
-                        @ApiResponse(responseCode = "404", description = "Book Id Or Patron Id Not Found")
+                        @ApiResponse(responseCode = "404", description = "Book Id Or Student Id Not Found")
         })
 
         @PutMapping("/return/{bookId}/appUser/{appUserId}")

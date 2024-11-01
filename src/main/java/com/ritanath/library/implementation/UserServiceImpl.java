@@ -28,20 +28,20 @@ public class UserServiceImpl implements UserServiceInterface {
     }
 
     @Override
-    @Cacheable(cacheNames = CachingConfig.PATRONS_CACHE_NAME, key = "#id")
+    @Cacheable(cacheNames = CachingConfig.StudentS_CACHE_NAME, key = "#id")
     public AppUser findById(Long id) {
         return appUserRepo.findById(id)
                 .orElseThrow();
     }
 
     @Override
-    @Cacheable(cacheNames = CachingConfig.PATRONS_CACHE_NAME, key = "#root.methodName")
+    @Cacheable(cacheNames = CachingConfig.StudentS_CACHE_NAME, key = "#root.methodName")
     public List<AppUser> findAll() {
         return appUserRepo.findAll();
     }
 
     @Override
-    @CacheEvict(cacheNames = CachingConfig.PATRONS_CACHE_NAME, key = "#id")
+    @CacheEvict(cacheNames = CachingConfig.StudentS_CACHE_NAME, key = "#id")
     public void deleteById(Long id) {
         AppUser appUser = appUserRepo.findById(id)
                         .orElseThrow();
@@ -49,15 +49,15 @@ public class UserServiceImpl implements UserServiceInterface {
     }
 
     @Override
-    @CachePut(cacheNames = CachingConfig.PATRONS_CACHE_NAME, key = "#id")
-    public AppUser updateById(Long id, AppUser updatedPatron) {
+    @CachePut(cacheNames = CachingConfig.StudentS_CACHE_NAME, key = "#id")
+    public AppUser updateById(Long id, AppUser updatedStudent) {
         AppUser appUser = appUserRepo.findById(id)
                 .orElseThrow();
 
-        appUser.setName(updatedPatron.getName());
-        appUser.setEmail(updatedPatron.getEmail());
-        appUser.setPhone(updatedPatron.getPhone());
-        appUser.setAddress(updatedPatron.getAddress());
+        appUser.setName(updatedStudent.getName());
+        appUser.setEmail(updatedStudent.getEmail());
+        appUser.setPhone(updatedStudent.getPhone());
+        appUser.setAddress(updatedStudent.getAddress());
         appUser = appUserRepo.save(appUser);
 
         return appUser;

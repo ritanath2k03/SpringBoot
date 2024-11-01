@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Schema(name = "Patron", description = "Patron Model")
+@Schema(name = "Student", description = "Student Model")
 @JsonInclude(JsonInclude.Include.NON_NULL) // Ignore null values during serialization
 public class UserDto {
 
@@ -30,7 +29,6 @@ public class UserDto {
     private String email;
 
     @NotBlank(message = "Phone is Required And Not Null")
-    @Pattern(regexp = "^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}$")
     @Schema(example = "123 456 7890")
     private String phone;
 

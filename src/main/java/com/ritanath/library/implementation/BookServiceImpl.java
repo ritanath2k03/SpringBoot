@@ -17,7 +17,6 @@ import java.util.NoSuchElementException;
 
 @Service
 @Transactional
-
 @Slf4j
 public class BookServiceImpl implements BookServiceInterface {
 
@@ -41,7 +40,12 @@ public class BookServiceImpl implements BookServiceInterface {
 
     @Override
     @Cacheable(cacheNames = CachingConfig.BOOKS_CACHE_NAME, key = "#root.methodName")
-    public List<Book> findAll() {
+    public List<Book> findSmallBooks() {
+        log.info("findAll()");
+        return bookRepo.findAll();
+    }
+    @Override
+   public List<Book> findAll() {
         log.info("findAll()");
         return bookRepo.findAll();
     }

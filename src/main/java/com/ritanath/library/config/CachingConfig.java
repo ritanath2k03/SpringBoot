@@ -10,5 +10,5 @@ public class CachingConfig {
 
     public static final String BOOKS_CACHE_NAME = "books";
 
-    public static final String PATRONS_CACHE_NAME = "patrons";
+    public static final String StudentS_CACHE_NAME = "Students";
 }

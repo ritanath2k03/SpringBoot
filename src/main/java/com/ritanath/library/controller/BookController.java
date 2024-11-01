@@ -70,6 +70,8 @@ public class BookController {
         @GetMapping
         public ResponseEntity<?> findAll() {
                 List<Book> books = bookServiceInterface.findAll();
+
+                System.out.println(books);
                 List<BookDto> responseBody = books.stream()
                                 .map(BookMapper::toDto)
                                 .collect(Collectors.toList());

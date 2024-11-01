@@ -31,7 +31,7 @@ public class UserController {
         @Autowired
         private UserServiceInterface appUserServiceInterface;
 
-        @Operation(summary = "Add Patron", description = "Add Patron")
+        @Operation(summary = "Add Student", description = "Add Student")
         @ApiResponses(value = {
                         @ApiResponse(responseCode = "201", description = "Book Added Successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserDto.class))),
                         @ApiResponse(responseCode = "400", description = "Validation Error", content = {
@@ -40,17 +40,17 @@ public class UserController {
         })
         @PostMapping
         public ResponseEntity<?> add(@Valid @RequestBody UserDto requestBody) {
-                com.ritanath.library.model.AppUser newSavedPatron = appUserServiceInterface.add(UserMapper.toEntity(requestBody));
-                UserDto responseBody = UserMapper.toDto(newSavedPatron);
+                com.ritanath.library.model.AppUser newSavedStudent = appUserServiceInterface.add(UserMapper.toEntity(requestBody));
+                UserDto responseBody = UserMapper.toDto(newSavedStudent);
                 return new ResponseEntity<>(responseBody, HttpStatus.CREATED);
         }
 
-        @Operation(summary = "Find Patron By Id", description = "Find Patron By Id")
+        @Operation(summary = "Find Student By Id", description = "Find Student By Id")
         @ApiResponses(value = {
-                        @ApiResponse(responseCode = "200", description = "Patron Retrieved Successfully", content = {
+                        @ApiResponse(responseCode = "200", description = "Student Retrieved Successfully", content = {
                                         @Content(mediaType = "application/json", schema = @Schema(implementation = UserDto.class))
                         }),
-                        @ApiResponse(responseCode = "404", description = "Patron Not Found With the Given Id")
+                        @ApiResponse(responseCode = "404", description = "Student Not Found With the Given Id")
         })
         @GetMapping("/{id}")
         public ResponseEntity<?> findById(@PathVariable Long id) {
@@ -59,9 +59,9 @@ public class UserController {
                 return ResponseEntity.ok(responseBody);
         }
 
-        @Operation(summary = "Find All Patrons", description = "Find All Patrons")
+        @Operation(summary = "Find All Students", description = "Find All Students")
         @ApiResponses(value = {
-                        @ApiResponse(responseCode = "200", description = "Patrons Retrieved Successfully", content = {
+                        @ApiResponse(responseCode = "200", description = "Students Retrieved Successfully", content = {
                                         @Content(mediaType = "application/json", schema = @Schema(implementation = UserDto.class))
                         })
         })
@@ -75,10 +75,10 @@ public class UserController {
                 return ResponseEntity.ok(responseBody);
         }
 
-        @Operation(summary = "Delete Patron By Id", description = "Delete Patron By Id")
+        @Operation(summary = "Delete Student By Id", description = "Delete Student By Id")
         @ApiResponses(value = {
-                        @ApiResponse(responseCode = "204", description = "Patron Deleted Successfully"),
-                        @ApiResponse(responseCode = "404", description = "Patron Not Found With the Given Id")
+                        @ApiResponse(responseCode = "204", description = "Student Deleted Successfully"),
+                        @ApiResponse(responseCode = "404", description = "Student Not Found With the Given Id")
         })
         @DeleteMapping("/{id}")
         public ResponseEntity<?> deleteById(@PathVariable Long id) {
@@ -87,15 +87,15 @@ public class UserController {
                                 .build();
         }
 
-        @Operation(summary = "Update Patron By Id", description = "Update Patron By Id")
+        @Operation(summary = "Update Student By Id", description = "Update Student By Id")
         @ApiResponses(value = {
-                        @ApiResponse(responseCode = "204", description = "Patron Updated Successfully"),
-                        @ApiResponse(responseCode = "404", description = "Patron Not Found With the Given Id")
+                        @ApiResponse(responseCode = "204", description = "Student Updated Successfully"),
+                        @ApiResponse(responseCode = "404", description = "Student Not Found With the Given Id")
         })
         @PutMapping("/{id}")
         public ResponseEntity<?> updateById(@PathVariable Long id, @Valid @RequestBody UserDto requestBody) {
                 AppUser appUser = UserMapper.toEntity(requestBody);
-                AppUser updatedPatron = appUserServiceInterface.updateById(id, appUser);
+                AppUser updatedStudent = appUserServiceInterface.updateById(id, appUser);
                 return ResponseEntity.noContent()
                                 .build();
         }
