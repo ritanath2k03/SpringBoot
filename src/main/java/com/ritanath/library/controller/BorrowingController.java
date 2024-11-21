@@ -14,24 +14,27 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("/v1/borrow")
 @AllArgsConstructor
 @Tag(name = "Borrowing", description = "Borrowing API Endpoints")
 public class BorrowingController {
 
+        @Autowired
         private final BorrowingServiceInterface borrowingServiceInterface;
 
         @Operation(summary = "Borrow Book", description = "Borrow Book for Student")
         @ApiResponses(value = {
-                        @ApiResponse(responseCode = "200", description = "Borrow Added Successfully", content = {
-                                        @Content(mediaType = "application/json", schema = @Schema(implementation = BorrowingDto.class))
-                        }),
+                @ApiResponse(responseCode = "200", description = "Borrow Added Successfully", content = {
+                        @Content(mediaType = "application/json", schema = @Schema(implementation = BorrowingDto.class))
+        }),
                         @ApiResponse(responseCode = "400", description = "Validation Error", content = {
                                         @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorValidationResponse.class))
                         }),
@@ -52,7 +55,9 @@ public class BorrowingController {
 
         @Operation(summary = "Return Book", description = "Return Book from Student")
         @ApiResponses(value = {
-                        @ApiResponse(responseCode = "200", description = "Book Returned Successfully"),
+                        @ApiResponse(responseCode = "200", description = "Book Returned Successfully",content = {
+                                @Content(mediaType = "application/json", schema = @Schema(implementation = BorrowingDto.class))
+                        }),
                         @ApiResponse(responseCode = "400", description = "Validation Error", content = {
                                         @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorValidationResponse.class))
                         }),

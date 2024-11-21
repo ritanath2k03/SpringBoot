@@ -8,11 +8,14 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
+@Component
 public class AppUser {
 
     @Id
@@ -29,5 +32,7 @@ public class AppUser {
 
     @OneToMany(mappedBy = "appUser" , cascade = CascadeType.ALL)
     private List<Borrowing> borrowings;
+
+  
 
 }

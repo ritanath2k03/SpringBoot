@@ -11,7 +11,7 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI openAPI() {
         return new OpenAPI().info(new Info()
-                .title("Library Management System")
-                .description("Library Management System API Documentation for Spring Boot"));
+                .title("Shelf space")
+                .description("Shelf space API Documentation for Spring Boot"));
     }
 }

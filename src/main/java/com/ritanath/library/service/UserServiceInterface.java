@@ -3,9 +3,11 @@ package com.ritanath.library.service;
 
 import java.util.List;
 
+import org.springframework.security.core.userdetails.UserDetailsService;
+
 import com.ritanath.library.model.AppUser;
 
-public interface UserServiceInterface {
+public interface UserServiceInterface extends UserDetailsService{
 
     AppUser add(AppUser user);
 
