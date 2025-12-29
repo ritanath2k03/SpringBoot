@@ -132,27 +132,6 @@ http://localhost:8080
 
 ---
 
-## 📄 Example API Request
-
-**POST** `/api/example`
-
-```json
-{
-  "name": "Test",
-  "value": 123
-}
-```
-
-**Response**
-
-```json
-{
-  "id": 1,
-  "name": "Test",
-  "value": 123
-}
-```
-
 ---
 
 ## 📚 Optional Enhancements
